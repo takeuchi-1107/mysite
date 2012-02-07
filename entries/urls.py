@@ -3,7 +3,6 @@
 
 #--------- import ---------
 from django.conf.urls.defaults import *
-from entries.models import Entry
 
 #------------------------------------------------
 # @breaf :

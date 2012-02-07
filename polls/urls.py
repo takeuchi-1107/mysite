@@ -3,7 +3,6 @@
 
 # polls/urls.py
 from django.conf.urls.defaults import *
-from mysite.polls.models import Poll
 
 # http://localhost:8000/polls/
 

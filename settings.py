@@ -12,7 +12,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', 	# Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'mysiteDB',        	            # Or path to database file if using sqlite3.
+        'NAME': 'mysite',        	            # Or path to database file if using sqlite3.
         'USER': 'root',                  	    # Not used with sqlite3.
         'PASSWORD': 'gumi',              	    # Not used with sqlite3.
         'HOST': '/tmp/mysqld.sock',            	# Set to empty string for localhost. Not used with sqlite3.
@@ -122,8 +122,9 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'django.contrib.admin',
 
-    'mysite.entries',
+    'mysite',
     'mysite.polls',
+    'mysite.entries',
     )
 
 # A sample logging configuration. The only tangible logging
