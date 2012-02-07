@@ -12,7 +12,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', 	# Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'database_polls',        	    # Or path to database file if using sqlite3.
+        'NAME': 'mysiteDB',        	            # Or path to database file if using sqlite3.
         'USER': 'root',                  	    # Not used with sqlite3.
         'PASSWORD': 'gumi',              	    # Not used with sqlite3.
         'HOST': '/tmp/mysqld.sock',            	# Set to empty string for localhost. Not used with sqlite3.
@@ -27,11 +27,11 @@ DATABASES = {
 # timezone as the operating system.
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
-TIME_ZONE = 'America/Chicago'
+TIME_ZONE = 'Asia/Tokyo'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ja'
 
 SITE_ID = 1
 
@@ -107,7 +107,6 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    "/Users/kabushikigaishagumi/project/mysite/templates",
 )
 
 INSTALLED_APPS = (
@@ -122,8 +121,10 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'django.contrib.admin',
+
+    'mysite.entries',
     'mysite.polls',
-)
+    )
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
