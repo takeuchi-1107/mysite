@@ -14,4 +14,4 @@ from entries.models import Entry
 #------------------------------------------------
 # @breaf : 登録
 #------------------------------------------------
-admin.site.register(Entry)
+admin.site.register( Entry )

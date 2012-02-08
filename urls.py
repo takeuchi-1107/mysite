@@ -14,10 +14,10 @@ from django.contrib import admin
 import os
 
 #--------- admin ---------
-admin.autodiscover()
+admin.autodiscover() # 管理画面のため
 
 urlpatterns = patterns('',
-    ( r'^admin/(.*)', include( admin.site.urls ) ),
+    ( r'^admin/', include( admin.site.urls ) ),
 )
 
 #--------- URL ---------
@@ -27,9 +27,9 @@ urlpatterns += patterns('',
     # polls
     ( r'^polls/', include('polls.urls') ),
     # entries
-    (r'^entries/', include('entries.urls') ),
+    ( r'^entries/', include('entries.urls') ),
     # account
-    (r'^account/', include('account.urls') ),
+    ( r'^account/', include('account.urls') ),
 )
 
 #--------- CSS ---------
