@@ -1,4 +1,7 @@
 
+{% extends "entries/base_entries.html" %}
+{% block entry_content %}
+
 <dt>
     タイトル: {{ object.title }}  <br/>
     コメント: {{ object.content}} <br/>
@@ -7,3 +10,5 @@
 <a href="/entries/update/{{ object.id }}">編集</a>
 <a href="/entries/delete/{{ object.id }}">削除</a>
 <a href="/entries/">一覧に戻る</a>
+
+{% endblock %}

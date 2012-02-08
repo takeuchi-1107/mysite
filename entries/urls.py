@@ -13,10 +13,10 @@ from models import Entry
 #--------- query ---------
 info_dict = { 'queryset':Entry.objects.all(), }
 
-#--------- URL ---------
+#--------- entries ---------
 urlpatterns = patterns('',
     # 一覧
-    ( r'^$', 'django.views.generic.list_detail.object_list', info_dict ),
+    url( r'^$', 'django.views.generic.list_detail.object_list', info_dict, name = "entries" ),
     # 新規作成
     ( r'^create/$', 'django.views.generic.create_update.create_object',
           {'model':Entry, 'post_save_redirect':'/entries/'} ),

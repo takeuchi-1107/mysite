@@ -95,10 +95,10 @@ TEMPLATE_LOADERS = (
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.contrib.csrf.middleware.CsrfMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'django.contrib.csrf.middleware.CsrfMiddleware',
 )
 
 ROOT_URLCONF = 'mysite.urls'
@@ -116,10 +116,6 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # Uncomment the next line to enable the admin:
-    # 'django.contrib.admin',
-    # Uncomment the next line to enable admin documentation:
-    # 'django.contrib.admindocs',
     'django.contrib.admin',
 
     'mysite',
@@ -149,3 +145,6 @@ LOGGING = {
         },
     }
 }
+
+LOGIN_REDIRECT_URL = "/account/"
+LOGIN_URL = "/account/login/"

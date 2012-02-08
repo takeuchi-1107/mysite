@@ -1,4 +1,7 @@
 
+{% extends "entries/base_entries.html" %}
+{% block entry_content %}
+
 {% if object %}
     <h3>編集</h3><br/>
 {% else %}
@@ -28,3 +31,5 @@
 <div class="operation">
     <a href="/entries/">一覧に戻る</a>
 </div>
+
+{% endblock %}

@@ -1,4 +1,7 @@
 
+{% extends "entries/base_entries.html" %}
+{% block entry_content %}
+
 <h3>一覧</h3>
 
 {% for entry in object_list %}
@@ -19,4 +22,4 @@
 
 {% endfor %}
 
-<a href="/entries/create/">追加</a>
+{% endblock %}
