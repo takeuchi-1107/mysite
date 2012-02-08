@@ -1,9 +1,12 @@
 
-<h3>新規作成</h3><br/>
+{% if object %}
+    <h3>編集</h3><br/>
+{% else %}
+    <h3>新規作成</h3><br/>
+{% endif %}
 
 {% if form.has_errors %}
     {% for field in form.fields %}
-
         {% if field.error %}
             {{ field.error }}
         {% endif %}

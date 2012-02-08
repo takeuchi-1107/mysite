@@ -1,0 +1,17 @@
+
+<form method="post" action=".">
+
+    <dt>
+        タイトル: {{ object.title }}  <br/>
+        コメント: {{ object.content}} <br/>
+    </dt><br/>
+
+    <p>この項目を削除します。よろしいですか？</p><br/>
+
+    <input type="submit"/>
+    <input type="button" value="いいえ" onClick="location.href='/entries/'" />
+</form><br/>
+
+<div class="operation">
+    <a href="/entries/">一覧に戻る</a>
+</div>

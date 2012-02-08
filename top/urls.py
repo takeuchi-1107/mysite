@@ -9,8 +9,9 @@ from django.conf.urls.defaults import *
 
 #
 urlpatterns = patterns( 'mysite.top.views',
+    # トップ
     (r'^$', 'index'),
-
-    (r'^/(?P<jamp_name>)polls/$', 'jamp'),
-    (r'^/(?P<jamp_name>)entries/$', 'jamp'),
+    # 各ページへ遷移
+    (r'^/(?P<jamp_page>)polls/$', 'jamp_index'),
+    (r'^/(?P<jamp_page>)entries/$', 'jamp_index'),
 )
