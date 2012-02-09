@@ -1,0 +1,131 @@
+@charset "UTF-8";
+
+body,form,div,ul,li,h1,h2,p,dl,dt,dd,hr
+{
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    text-align: center;
+    background: #CCFF33 url(../img/tutorial_body.gif) repeat-y center;
+    color: #333333;
+    font-family: Tahoma, Arial, "ヒラギノ角ゴ Pro W3", sans-serif;
+    font-size: 62.5%;
+}
+
+
+#wrapper {
+    width: 740px;
+    margin: 0 auto;
+    padding-left: 0px !important;
+    text-align: left;
+}
+
+
+#header {
+    width: 740px;
+    height: 260px;
+    background: url(../img/tutorial_hader.gif) no-repeat left center;
+}
+#header h1 {
+    display: none;
+}
+
+
+a:link,
+a:visited {
+    color: #000000;
+    text-decoration: none;
+}
+a:hover,
+a:active {
+    color: #F53434;
+    text-decoration: underline;
+}
+
+
+#nav {
+    width: 720px;
+    padding: 0 10px;
+    background-color: #99CC00;
+}
+#nav a{
+    display: block;
+    line-height: 200%;
+    color: #ffffff;
+    font-size: 1.4em;
+    font-weight: bold;
+}
+#nav a:hover {
+    color: #CCCCCC;
+    text-decoration: none;
+}
+
+
+#main {
+    padding: 10px 15px 30px 15px;
+    width: 440px;
+    float: left;
+}
+#main dt {
+    margin: 10px 0 12px;
+    padding: 0 0 0 16px;
+    font-size: 1.6em;
+    font-weight: bold;
+    background: transparent url(../img/entry_piyo.gif) no-repeat center left;
+}
+#main dd {
+    font-size: 1.1em;
+    line-height: 140%;
+}
+#main h2,
+#main h3 {
+    margin: 0 0 5px;
+    font-family: "Arial Black";
+    text-transform: lowercase;
+    font-size: 1.6em;
+}
+#main hr {
+    margin: 20px -15px;
+    height: 1px;
+    border-width: 2px 0px 0px 0px;
+    border-style: dotted;
+    border-color: #999999;
+}
+
+
+.operation {
+    padding-top: 10px;
+}
+.operation a,
+a.operation {
+    padding: 3px 5px;
+    line-height: 100%;
+    border: 1px solid #CCCCCC;
+    background: #666666 no-repeat 0 50%;
+    color: #FFFFFF;
+    font-size: 1.0em;
+    font-weight: bold;
+}
+.operation a:hover,
+a.operation:hover {
+    border: 1px solid #999999;
+    background-color: #CCCCCC;
+    color: #FFFFFF;
+}
+
+.validation {
+    padding: 10px 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.validation label {
+    font-size: 1.2em;
+    display: block;
+}
+.validation error {
+    color: #99CC00;
+}

@@ -1,5 +1,6 @@
 
 <div class="validation">
+
     <p><error>
         {% if form.errors %}
             正しいユーザ名とパスワードを入力してください (大文字小文字は区別します) 。
@@ -8,18 +9,15 @@
     <br />
 
     <form method="post" action=".">
-        <label for="username">ユーザ名：</label>
-        {{ form.username }}
-        <br/>
-        <label for="password">パスワード：</label>
-        {{ form.password }}
-        <br/>
+        <label for="username">ユーザ名：</label> {{ form.username }} <br/>
+        <label for="password">パスワード：</label> {{ form.password }} <br/>
         <input type="submit" value="ログイン" />
     </form>
 
 </div>
-<br />
-<br />
+
+<br/>
+<br/>
 
 <dd div class="operation">
     <a href= {% url entries %}>一覧に戻る</a>
