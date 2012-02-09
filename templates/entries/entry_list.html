@@ -1,8 +1,10 @@
 
-{% extends "./entries/base_entries.html" %}
-{% block entry_content %}
+{% extends "entries/base.html" %}
+{% block main %}
 
 <h3>一覧</h3>
+
+{% include 'entries/entry_add.html' %}
 
 {% for entry in object_list %}
 
