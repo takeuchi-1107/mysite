@@ -1,12 +1,12 @@
 
 {% if user.is_anonymous %}
     <dd div class="operation">
-        <a href="/login/">ログインする</a>
+        <a href="/account/login/">ログインする</a>
     </dd>
     <hr />
 {% else %}
     <p>username: <b>{{ user.username }}</b>
-        <a href="/logout/"> [ログアウト]</a>
+        <a href="/account/logout/"> [ログアウト]</a>
     </p>
     <hr />
 {% endif %}
