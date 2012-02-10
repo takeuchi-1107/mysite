@@ -3,6 +3,11 @@
 <ul>
     <li><a href="../polls/"> polls </a></li>
     <li><a href="../entries/"> entries </a></li>
+    {% if not user.is_anonymous %}
+        <li div class="operation">
+            <a href= "/mypage/">マイページ</a>
+        </li><hr/>
+    {% endif %}
 </ul>
 
 <hr/>
