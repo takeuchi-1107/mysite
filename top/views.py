@@ -13,7 +13,7 @@ from django.shortcuts import render_to_response
 # @breaf : 初期ページ呼び出し
 #------------------------------------------------
 def index(request):
-    return render_to_response('top/index.html', request )
+    return render_to_response('top/index.html', request)
 
 #------------------------------------------------
 # @breaf : 各トップページへ遷移
