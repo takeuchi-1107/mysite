@@ -23,7 +23,7 @@ urlpatterns = patterns('',
     # 詳細閲覧
     ( r'^detail/(?P<object_id>\d+)/$', 'django.views.generic.list_detail.object_detail', info_dict ),
     # 更新
-    ( r'^update/(?P<object_id>\d+)/$', 'django.views.generic.create_update.update_object', {'model':Entry} ),
+    ( r'^update/(?P<object_id>\d+)/$', 'django.views.generic.create_update.update_object', {'model':Entry } ),
     # 削除
     ( r'^delete/(?P<object_id>\d+)/$', 'django.views.generic.create_update.delete_object',
          { 'model':Entry, 'post_delete_redirect':'/entries/' } ),
