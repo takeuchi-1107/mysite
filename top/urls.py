@@ -3,7 +3,7 @@
 
 # polls/urls.py
 from django.conf.urls.defaults import *
-#from top.models import Poll
+
 
 # http://localhost:8000/top/
 

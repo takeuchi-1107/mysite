@@ -1,7 +1,5 @@
 
 from django.db import models
 
-class StaticValue :
+#class StaticValue :
 
-    def test( *args, **kwargs ):
-        print( args, kwargs )
