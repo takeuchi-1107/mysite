@@ -3,10 +3,10 @@
 <ul>
     <li><a href="../polls/"> polls </a></li>
     <li><a href="../entries/"> entries </a></li>
-    {% if not user.is_anonymous %}
+    {% if not request.user.is_anonymous %}
         <li div class="operation">
-            <a href= "/mypage/">マイページ</a>
-        </li><hr/>
+            <a href= "/mypage/home/{{ request.user.username }}/">マイページ</a>
+        </li>
     {% endif %}
 </ul>
 

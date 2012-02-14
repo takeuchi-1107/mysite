@@ -23,6 +23,7 @@ urlpatterns = patterns('',
 
 #--------- URL ---------
 urlpatterns += patterns('',
+    (r'^medias/(?P<path>.*)$','django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
     # top : http://127.0.0.1:8000/top/
     ( r'^top/', include('top.urls') ),
     # polls : http://127.0.0.1:8000/polls/

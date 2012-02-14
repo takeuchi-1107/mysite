@@ -14,7 +14,10 @@ from django.shortcuts import render_to_response
 # @breaf : 初期ページ呼び出し
 #------------------------------------------------
 def index(request):
-    return render_to_response('top/index.html', request)
+    b = request.user.is_anonymous()
+#    if b == True:
+    print b
+    return render_to_response('top/index.html', {"request":request})
 
 #------------------------------------------------
 # @breaf : 各トップページへ遷移
