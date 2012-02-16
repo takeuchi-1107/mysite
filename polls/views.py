@@ -9,7 +9,7 @@
 #--------- import ---------
 from django.shortcuts import render_to_response
 from django.template.context import RequestContext
-from mysite.polls.models import Poll
+from mysite.polls.models import Poll, Choice, Vote
 
 #------------------------------------------------
 # @breaf : 初期
@@ -63,10 +63,17 @@ def vote(request, object_id):
         # 投票状況を更新
         selected_choice.votes += 1
         selected_choice.save()
-
+        vote = Vote()
+        vote.choice = selected_choice
+        if request.user.is_anonymous():
+            vote.username = 'anonymous'
+        else:
+            vote.username = request.user.username
+        vote.save()
+    #    selected_choice.vote_set.
         # ユーザが Back ボタンを押して同じフォームを提出するのを防ぐ
         # ため、POST データを処理できた場合には、必ずHttpResponseRedirect を返すようにします。
-        return HttpResponseRedirect( reverse( 'results', args=(p.id,) ) )
+        return HttpResponseRedirect( reverse( 'results', args=(p.id,)))
 
 #------------------------------------------------
 # @breaf : 結果

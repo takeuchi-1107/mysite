@@ -41,6 +41,10 @@ class Choice(models.Model):
     def __unicode__(self):
         return self.choice
 
+class Vote(models.Model):
+    choice = models.ForeignKey(Choice)
+    username = models.CharField(max_length=200)
+
 #------------------------------------------------
 # @class :
 # @breaf :
@@ -51,7 +55,15 @@ class PollAdmin(admin.ModelAdmin):
         ('Date information', {'fields': ['pub_date'], 'classes': ['collapse']}),
     ]
 
+class VoteAdmin(admin.ModelAdmin):
+    list_display = ( 'username', 'test')
+    def test(self, obj):
+        o = Poll.objects.get(id=obj.choice.poll.id)
+        return o.question
 #------------------------------------------------
 # @breaf :
 #------------------------------------------------
 admin.site.register(Poll, PollAdmin)
+admin.site.register(Choice)
+admin.site.register(Vote, VoteAdmin)
+

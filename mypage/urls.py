@@ -12,4 +12,5 @@ urlpatterns = patterns( 'mypage.views',
     (r'^$', 'index'),
     (r'^home/(?P<username>.+)/$', 'homepage'),
     (r'^photo_upload/$', 'photo_upload'),
+    url( r'^result/(?P<username>.+)/(?P<resu>.+)/$', 'result', name='result'),
 )

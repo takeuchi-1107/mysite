@@ -9,3 +9,12 @@
     {#    <li>{% Static_Value.test test1={ "id" : "hogehoge", "name" : "abcdefg", "mail" : "test@example.com" } %}</li>#}
 
 </ul>
+{% for choice in object.choice_set.all %}
+    <p>{{ choice.choice }}</p>
+    <ul>
+    {% for vote in choice.vote_set.all %}
+            <li>{{ vote.username }}</li>
+    {% endfor %}
+    </ul>
+{% endfor %}
+
