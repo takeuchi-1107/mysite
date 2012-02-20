@@ -8,7 +8,7 @@ from django.http import Http404, HttpResponseRedirect
 from django.views.generic.simple import direct_to_template
 from django.http import HttpResponseRedirect
 #------------------------------------------------
-# @breaf : インデックス
+# @brief : インデックス
 #------------------------------------------------
 def index(request):
     return render_to_response( 'mypage/index.html', { 'request': request } )

@@ -3,7 +3,7 @@
 
 #=====================================================
 # @file  :
-# @breaf :
+# @brief :
 #=====================================================
 
 #--------- import ---------
@@ -14,7 +14,7 @@ import datetime
 
 #------------------------------------------------
 # @class :
-# @breaf :
+# @brief :
 #------------------------------------------------
 class Poll(models.Model):
     question = models.CharField(max_length=200)
@@ -30,7 +30,7 @@ class Poll(models.Model):
 
 #------------------------------------------------
 # @class :
-# @breaf :
+# @brief :
 #------------------------------------------------
 class Choice(models.Model):
     poll = models.ForeignKey(Poll)
@@ -47,7 +47,7 @@ class Vote(models.Model):
 
 #------------------------------------------------
 # @class :
-# @breaf :
+# @brief :
 #------------------------------------------------
 class PollAdmin(admin.ModelAdmin):
     fieldsets = [
@@ -61,7 +61,7 @@ class VoteAdmin(admin.ModelAdmin):
         o = Poll.objects.get(id=obj.choice.poll.id)
         return o.question
 #------------------------------------------------
-# @breaf :
+# @brief :
 #------------------------------------------------
 admin.site.register(Poll, PollAdmin)
 admin.site.register(Choice)

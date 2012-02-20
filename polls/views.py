@@ -3,7 +3,7 @@
 
 #=====================================================
 # @file  : view.py
-# @breaf : 投票機能定義
+# @brief : 投票機能定義
 #=====================================================
 
 #--------- import ---------
@@ -12,14 +12,14 @@ from django.template.context import RequestContext
 from mysite.polls.models import Poll, Choice, Vote
 
 #------------------------------------------------
-# @breaf : 初期
+# @brief : 初期
 #------------------------------------------------
 def index(request):
     object_list = Poll.objects.all().order_by('-pub_date')[:5]
     return render_to_response('polls/index.html', { 'object_list': object_list } )
 
 #------------------------------------------------
-# @breaf : 詳細
+# @brief : 詳細
 #------------------------------------------------
 
 #--------- import ---------
@@ -31,7 +31,7 @@ def detail( request, object_id ):
     return render_to_response( 'polls/detail.html', {'object': p} )
 
 #------------------------------------------------
-# @breaf : 投票
+# @brief : 投票
 #------------------------------------------------
 
 #--------- import ---------
@@ -76,7 +76,7 @@ def vote(request, object_id):
         return HttpResponseRedirect( reverse( 'results', args=(p.id,)))
 
 #------------------------------------------------
-# @breaf : 結果
+# @brief : 結果
 #------------------------------------------------
 def results(request, object_id):
     p = get_object_or_404( Poll, pk=object_id )

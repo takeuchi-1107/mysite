@@ -128,6 +128,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
 
     'mysite',
+    'mysite.common',
     'mysite.polls',
     'mysite.entries',
     'mysite.mypage'
@@ -161,5 +162,6 @@ LOGIN_URL = "/account/login/"
 
 from django.conf import global_settings
 TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
+    'mysite.common.context_processors.contexts',
     'mysite.context_processors.media',
     )
