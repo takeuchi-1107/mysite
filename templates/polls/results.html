@@ -6,8 +6,6 @@
         <li>{{ choice.choice }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }} 票 </li>
     {% endfor %}
 
-    {#    <li>{% Static_Value.test test1={ "id" : "hogehoge", "name" : "abcdefg", "mail" : "test@example.com" } %}</li>#}
-
 </ul>
 {% for choice in object.choice_set.all %}
     <p>{{ choice.choice }}</p>

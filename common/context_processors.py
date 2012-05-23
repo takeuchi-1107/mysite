@@ -10,6 +10,6 @@ from common.game_text import GameText
 #------------------------------------------------
 def contexts(request):
     return {
+        'request': request,
         'StaticValue' : StaticValue,
-        'GameText' : GameText,
     }

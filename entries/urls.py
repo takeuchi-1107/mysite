@@ -16,8 +16,7 @@ info_dict = { 'queryset':Entry.objects.all(), }
 #--------- entries ---------
 urlpatterns = patterns('',
     # 一覧
-    #url( r'^$', 'django.views.generic.list_detail.object_list', info_dict, name = "entries" ),
-    url( r'^$', 'entries.views.entries_list', name = "entries" ),
+    url( r'^$', 'django.views.generic.list_detail.object_list', info_dict, name = "entries" ),
     # 新規作成
     ( r'^create/$', 'django.views.generic.create_update.create_object',
           {'model':Entry, 'post_save_redirect':'/entries/'} ),

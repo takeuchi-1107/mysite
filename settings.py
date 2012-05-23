@@ -131,7 +131,7 @@ INSTALLED_APPS = (
     'mysite.common',
     'mysite.polls',
     'mysite.entries',
-    'mysite.mypage'
+    'mysite.mypage',
     )
 
 # A sample logging configuration. The only tangible logging
