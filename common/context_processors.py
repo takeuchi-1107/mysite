@@ -2,8 +2,8 @@
 # -*- encoding: utf-8 -*-
 
 #--------- import ---------
+from django.conf import settings
 from common.static_value import StaticValue
-from common.game_text import GameText
 
 #------------------------------------------------
 # @brief : デフォルトコンテキスト
@@ -13,3 +13,11 @@ def contexts(request):
         'request': request,
         'StaticValue' : StaticValue,
     }
+
+#------------------------------------------------
+# @brief : { MEDIA_URL }を使用
+#------------------------------------------------
+def media(request):
+    return {
+        'MEDIA_URL': settings.MEDIA_URL,
+        }

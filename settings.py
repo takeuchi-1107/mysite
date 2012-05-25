@@ -55,7 +55,7 @@ MEDIA_ROOT = os.path.join(os.path.dirname(__file__ ), '../medias')
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
-MEDIA_URL = '/medias/'
+MEDIA_URL = '/media/'
 
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
@@ -126,6 +126,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admin',
+    'django.contrib.comments',
 
     'mysite',
     'mysite.common',
@@ -162,6 +163,6 @@ LOGIN_URL = "/account/login/"
 
 from django.conf import global_settings
 TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
-    'mysite.common.context_processors.contexts',
     'mysite.context_processors.media',
+    'mysite.common.context_processors.contexts',
     )

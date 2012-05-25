@@ -1,0 +1,25 @@
+
+
+<div class="validation">
+
+        {% if message %}
+           <p><strong>{{ message }}</strong></p>
+        {% endif %}
+
+        {% if not success %}
+           <form action="." method="post">
+               ユーザー名 <input type="text" name="name"> <br/>
+               パスワード <input type="password" name="pass"> <br/>
+               パスワード(確認) <input type="password" name="pass2"> <br/>
+               <input type="submit" value="登録"/>
+           </form>
+
+        {% endif %}
+
+</div>
+
+<br/>
+
+<dd div class="operation">
+       <a href= "../login/">ログイン画面に戻る</a>
+</dd>

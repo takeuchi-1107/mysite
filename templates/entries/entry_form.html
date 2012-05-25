@@ -23,13 +23,14 @@
         {% if form.title.errors %} <p><error> {{ form.title.errors|join:", "}}</error></p>{% endif %}<br/><br/>
         <label for="id_content">内容</label>{{ form.content }}
         {% if form.content.errors %} <p><error>  {{ form.content.errors|join:", "}}</error></p><br/><br/>{% endif %}
+
         <p><input type="submit" value="保存" /></p><br/>
     </form>
 </div>
 
 
 <div class="operation">
-    <a href="/entries/">一覧に戻る</a>
+    <a href="/entries/page/1/">一覧に戻る</a>
 </div>
 
 {% endblock %}

@@ -1,28 +1,28 @@
+
 {% extends "entries/base.html" %}
-{% load testtag %}
 
 {% block main %}
 
-<h3>一覧</h3>
+    <h3>一覧</h3>
 
-{% include 'entries/entry_add.html' %}
+    {% include 'entries/entry_add.html' %}
 
-{% for entry in object_list %}
+    {% for entry in object_list %}
 
-    <dt>
-        <a href="/entries/detail/{{ entry.id }}">{{ entry.title }}</a>
-    </dt>
+        <dt>
+            <a href="/entries/detail/{{ entry.id }}">{{ entry.title }}</a>
+        </dt>
 
-    <dd>
-        {{ entry.content }}
-    </dd><br />
+        <dd>
+            {{ entry.content }}
+        </dd><br/>
 
-    <dd class="operation">
-        <a href="/entries/update/{{ entry.id }}">編集</a>
-        <a href="/entries/delete/{{ entry.id }}">削除</a>
-    </dd>
-    <hr/>
+        <dd class="operation">
+            <a href="/entries/update/{{ entry.id }}">編集</a>
+            <a href="/entries/delete/{{ entry.id }}">削除</a>
+        </dd>
+        <hr/>
 
-{% endfor %}
+    {% endfor %}
 
 {% endblock %}

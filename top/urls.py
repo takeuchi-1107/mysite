@@ -4,9 +4,6 @@
 # polls/urls.py
 from django.conf.urls.defaults import *
 
-
-# http://localhost:8000/top/
-
 #
 urlpatterns = patterns( 'mysite.top.views',
     # トップ

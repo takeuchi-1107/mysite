@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 from mypage.models import FacePhoto
 from django.http import Http404, HttpResponseRedirect
 from django.views.generic.simple import direct_to_template
-from django.http import HttpResponseRedirect
+
 #------------------------------------------------
 # @brief : インデックス
 #------------------------------------------------
@@ -25,6 +25,12 @@ def homepage(request, username):
     else:
         photoname = obj.image.name
     return direct_to_template( request, 'mypage/homepage.html', { 'request': request, 'username':username, 'photoname':photoname })
+
+
+#
+def result_entrypage(request):
+
+    return render_to_response('mypage/photo_upload.html', {'message': message,'username':username}, context_instance=RequestContext(request))
 
 def photo_upload(request):
     username = request.user.username
@@ -53,7 +59,8 @@ def photo_upload(request):
     else:
         message = ""
 
-    return render_to_response('mypage/photo_upload.html', {'message': message,'username':username}, context_instance=RequestContext(request))#    return render_to_response('mypage/photo_upload.html', {'message': message,'username':username}, context_instance=RequestContext(request))
+    return render_to_response('mypage/photo_upload.html', {'message': message,'username':username}, context_instance=RequestContext(request))
 
+#
 def result(request, username, resu):
     return render_to_response( 'mypage/result.html', { 'username':username,'resu':resu} )

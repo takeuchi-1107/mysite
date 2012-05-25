@@ -2,7 +2,8 @@
 <!-- コンテンツ -->
 <ul>
     <li><a href="../polls/"> polls </a></li>
-    <li><a href="../entries/"> entries </a></li>
+    <li><a href="../entries/page/1/"> entries </a></li>
+    <li><a href="../account/create/"> create </a></li>
     {% if not request.user.is_anonymous %}
         <li div class="operation">
             <a href= "/mypage/home/{{ request.user.username }}/">マイページ</a>
