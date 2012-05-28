@@ -17,7 +17,7 @@ urlpatterns = patterns('',
     # 新規作成
     (r'^create/$', views_path + '.create', '' ),
     # 新規登録
-    (r'^register/$', views_path + '.views.register', '' ),
+    (r'^register/$', views_path + '.register', '' ),
     # ログイン
     (r'^login/$', 'django.contrib.auth.views.login', {'template_name': 'account/login.html'} ),
     # ログアウト

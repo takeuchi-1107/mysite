@@ -10,11 +10,11 @@ views_path = 'src.polls.views'
 #--------- polls ---------
 urlpatterns = patterns( views_path,
     # トップ
-    (r'^$', 'index'),
+#    (r'^$', 'index' ),
     # 詳細
-    (r'^(?P<object_id>\d+)/$', 'detail'),
+#    (r'^(?P<object_id>\d+)/$', 'detail'),
     # 結果
-    url(r'^(?P<object_id>\d+)/results/$', 'results', name='results'),
+#    url(r'^(?P<object_id>\d+)/results/$', 'results', name='results'),
     # 投票
-    (r'^(?P<object_id>\d+)/vote/$', 'vote'),
+#    (r'^(?P<object_id>\d+)/vote/$', 'vote'),
 )

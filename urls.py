@@ -32,7 +32,7 @@ urlpatterns += patterns('',
     # account : http://127.0.0.1:8000/account/
     ( r'^account/', include('src.account.urls') ),
     # mypage : http://127.0.0.1:8000/mypage/
-    ( r'^mypage/', include('src.mypage.urls') ),
+#    ( r'^mypage/', include('src.mypage.urls') ),
     # twitter : http://127.0.0.1:8000/twitter/
     ( r'^twitter/', include('src.twitter.urls') ),
 )
