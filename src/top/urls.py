@@ -4,8 +4,11 @@
 # polls/urls.py
 from django.conf.urls.defaults import *
 
-#
-urlpatterns = patterns( 'mysite.top.views',
+#--------- path ---------
+views_path = 'src.top.views'
+
+#--------- top ---------
+urlpatterns = patterns(views_path,
     # トップ
     (r'^$', 'index'),
     # 各ページへ遷移

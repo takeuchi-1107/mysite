@@ -9,7 +9,7 @@
 #--------- import ---------
 from django.shortcuts import render_to_response
 from django.template.context import RequestContext
-from mysite.polls.models import Poll, Choice, Vote
+from src.polls.models import Poll, Choice, Vote
 
 #------------------------------------------------
 # @brief : 初期
@@ -23,23 +23,20 @@ def index(request):
 #------------------------------------------------
 
 #--------- import ---------
-from django.shortcuts import render_to_response, get_object_or_404
+from django.shortcuts import  get_object_or_404
 
 #--------- function ---------
 def detail( request, object_id ):
     p = get_object_or_404( Poll, pk=object_id )
-    return render_to_response( 'polls/detail.html', {'object': p} )
+    return render_to_response('polls/detail.html', {'object': p} )
 
 #------------------------------------------------
 # @brief : 投票
 #------------------------------------------------
 
 #--------- import ---------
-import os
-from django.shortcuts import get_object_or_404, render_to_response
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
-from mysite.polls.models import Choice, Poll
 
 #--------- function ---------
 def vote(request, object_id):
@@ -80,6 +77,6 @@ def vote(request, object_id):
 #------------------------------------------------
 def results(request, object_id):
     p = get_object_or_404( Poll, pk=object_id )
-    return render_to_response( 'polls/results.html', { 'object': p } )
+    return render_to_response('polls/results.html', { 'object': p } )
 
 # End of File

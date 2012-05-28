@@ -3,7 +3,7 @@ from django.core.urlresolvers import reverse
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.contrib.auth.models import User
-from mypage.models import FacePhoto
+from src.mypage.models import FacePhoto
 from django.http import Http404, HttpResponseRedirect
 from django.views.generic.simple import direct_to_template
 
@@ -63,4 +63,4 @@ def photo_upload(request):
 
 #
 def result(request, username, resu):
-    return render_to_response( 'mypage/result.html', { 'username':username,'resu':resu} )
+    return render_to_response('mypage/result.html', { 'username':username,'resu':resu} )

@@ -22,7 +22,7 @@ def create( request ):
         try:
             user = User.objects.create_user( name, mail, password)
         except IntegrityError:
-            return render_to_response( 'account/register.html',
+            return render_to_response('account/register.html',
                                        {'message' : "指定のユーザは登録済みです。", 'success' : True, },
                                         context_instance=RequestContext(request) )
         except:

@@ -119,6 +119,7 @@ TEMPLATE_DIRS = (
 )
 
 INSTALLED_APPS = (
+    #----- system -----
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -128,11 +129,18 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.comments',
 
+    #----- twitter -----
+    'tweepy',
+
+    #----- mysite -----
     'mysite',
-    'mysite.common',
-    'mysite.polls',
-    'mysite.entries',
-    'mysite.mypage',
+    'mysite.src.account',
+    'mysite.src.common',
+    'mysite.src.entries',
+    'mysite.src.mypage',
+    'mysite.src.polls',
+    'mysite.src.top',
+    'mysite.src.twitter',
     )
 
 # A sample logging configuration. The only tangible logging
@@ -161,8 +169,14 @@ LOGGING = {
 LOGIN_REDIRECT_URL = "/account/"
 LOGIN_URL = "/account/login/"
 
+#---------------------------------------------
+# common context
+#---------------------------------------------
 from django.conf import global_settings
+
+commoncontext_path = 'mysite.src.common.context_processors'
+
 TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
-    'mysite.context_processors.media',
-    'mysite.common.context_processors.contexts',
+    commoncontext_path + '.media',
+    commoncontext_path + '.contexts',
     )

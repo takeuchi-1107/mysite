@@ -8,7 +8,10 @@
 
 #--------- import ---------
 from django.conf.urls.defaults import *
-from models import Entry
+from src.entries.models import Entry
+
+#--------- import ---------
+views_path = 'src.entries.views'
 
 #--------- query ---------
 info_dict = { 'queryset':Entry.objects.all(), }
@@ -17,10 +20,9 @@ info_dict = { 'queryset':Entry.objects.all(), }
 urlpatterns = patterns('',
 
     # 一覧
-    ( r'^page/(?P<object_id>\d+)/$', 'entries.views.page_list' ),
+    ( r'^page/(?P<object_id>\d+)/$', views_path + '.page_list' ),
     # 新規作成
-    ( r'^create/$', 'entries.views.create_entry' ),
-
+    ( r'^create/$', views_path + '.create_entry' ),
     # 詳細閲覧
     ( r'^detail/(?P<object_id>\d+)/$', 'django.views.generic.list_detail.object_detail', info_dict ),
     # 更新

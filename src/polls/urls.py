@@ -4,10 +4,11 @@
 # polls/urls.py
 from django.conf.urls.defaults import *
 
-# http://localhost:8000/polls/
+#--------- import ---------
+views_path = 'src.polls.views'
 
-#
-urlpatterns = patterns( 'polls.views',
+#--------- polls ---------
+urlpatterns = patterns( views_path,
     # トップ
     (r'^$', 'index'),
     # 詳細

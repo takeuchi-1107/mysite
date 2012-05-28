@@ -9,7 +9,7 @@
 #--------- import ---------
 from django.contrib import admin
 
-from entries.models import Entry
+from src.entries.models import Entry
 
 #------------------------------------------------
 # @brief : 登録

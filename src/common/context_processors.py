@@ -3,7 +3,7 @@
 
 #--------- import ---------
 from django.conf import settings
-from common.static_value import StaticValue
+from src.common.static_value import StaticValue
 
 #------------------------------------------------
 # @brief : デフォルトコンテキスト

@@ -23,17 +23,22 @@ urlpatterns = patterns('',
 
 #--------- URL ---------
 urlpatterns += patterns('',
-    (r'^medias/(?P<path>.*)$','django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
     # top : http://127.0.0.1:8000/top/
-    ( r'^top/', include('top.urls') ),
+    ( r'^top/$', include('src.top.urls') ),
     # polls : http://127.0.0.1:8000/polls/
-    ( r'^polls/', include('polls.urls') ),
+    ( r'^polls/', include('src.polls.urls') ),
     # entries : http://127.0.0.1:8000/entries/
-    ( r'^entries/', include('entries.urls') ),
+    ( r'^entries/', include('src.entries.urls') ),
     # account : http://127.0.0.1:8000/account/
-    ( r'^account/', include('account.urls') ),
+    ( r'^account/', include('src.account.urls') ),
     # mypage : http://127.0.0.1:8000/mypage/
-    ( r'^mypage/', include('mypage.urls') ),
+    ( r'^mypage/', include('src.mypage.urls') ),
+    # twitter : http://127.0.0.1:8000/twitter/
+    ( r'^twitter/', include('src.twitter.urls') ),
+)
+
+urlpatterns += patterns('',
+    (r'^medias/(?P<path>.*)$','django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
 )
 
 #--------- CSS ---------

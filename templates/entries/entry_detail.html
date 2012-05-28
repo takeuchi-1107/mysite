@@ -1,11 +1,13 @@
-{% extends "entries/base.html" %}
+
+{% extends "./base.html" %}
+
 {% load comments %}
 
-{% block main %}
+{% block content %}
 
     <dt>
-        タイトル: {{ form.title }} <br/>
-        本文: {{ form.content }} <br/>
+        タイトル: {{ object.title }} <br/>
+        本文: {{ object.body }} <br/>
     </dt>
 
     <br/>

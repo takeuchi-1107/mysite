@@ -7,7 +7,7 @@ from django.conf.urls.defaults import *
 # http://localhost:8000/polls/
 
 #
-urlpatterns = patterns( 'mypage.views',
+urlpatterns = patterns('.views',
     # トップ
     (r'^$', 'index'),
     (r'^home/(?P<username>.+)/$', 'homepage'),
