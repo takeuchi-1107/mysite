@@ -9,19 +9,20 @@ from django.core.urlresolvers import reverse
 import tweepy
 
 #--------- template ---------
-view_path = 'src.twitter.view'
+view_path = 'src.twitter.views'
 template_path = 'twitter/'
 
 CONSUMER_KEY    = 'N6ETZqtUipxI3COGdHPKg'
 CONSUMER_SECRET = 'vK20lil9dan6YnLNMDXXMGD8UWScphyk58vFi854k'
+CALLBACK_URL = 'http://127.0.0.1:8000/twitter/oauth/get_callback/'
 
 def index(request):
-    return render_to_response( template_path + 'index.html' )
+    return render_to_response( template_path + '/index.html' )
 
 
 def get(request):
 
-    auth = tweepy.OAuthHandler( CONSUMER_KEY, CONSUMER_SECRET )
+    auth = tweepy.OAuthHandler( CONSUMER_KEY, CONSUMER_SECRET, CALLBACK_URL )
 
     try:
         auth_url = auth.get_authorization_url()
@@ -57,7 +58,7 @@ def get_callback(request):
 def oauth_index(request):
 
     auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
-    auth.set_access_token(request.session.get('key'), request.session.get('secret'))
+    auth.set_access_token( request.session.get('key'), request.session.get('secret') )
     api = tweepy.API(auth_handler=auth)
 
     # Get username
@@ -66,11 +67,9 @@ def oauth_index(request):
     # Get timeline
     timeline_list = api.home_timeline()
 
-    ctxt = RequestContext(request, {
-        'username': username,
-        'timeline_list': timeline_list,
-        })
-    return render_to_response( template_path + 'twitter.html', ctxt)
+    ctxt = RequestContext( request, { 'username': username, 'timeline_list': timeline_list } )
+
+    return render_to_response( template_path + '/twitter.html', ctxt)
 
 
 def post(request):

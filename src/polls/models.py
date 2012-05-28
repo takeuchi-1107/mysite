@@ -7,8 +7,8 @@
 #=====================================================
 
 #--------- import ---------
-from django.db import models        #...
-from django.contrib import admin    #...
+from django.db import models
+from django.contrib import admin
 
 import datetime
 
@@ -63,7 +63,7 @@ class VoteAdmin(admin.ModelAdmin):
 #------------------------------------------------
 # @brief :
 #------------------------------------------------
-admin.site.register(Poll, PollAdmin)
-admin.site.register(Choice)
-admin.site.register(Vote, VoteAdmin)
+#admin.site.register(Poll, PollAdmin)
+#admin.site.register(Choice)
+#admin.site.register(Vote, VoteAdmin)
 

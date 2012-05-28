@@ -116,6 +116,9 @@ TEMPLATE_DIRS = (
     # Don't forget to use absolute paths, not relative paths.
     os.path.join(BASE_PATH, 'templates'),
     os.path.dirname(__file__)+os.sep+'templates',
+
+#    BASE_PATH + "/twitter_oauth/twitter_oauth/templates",
+    "/Users/kabushikigaishagumi/project/mysite/templates",
 )
 
 INSTALLED_APPS = (
