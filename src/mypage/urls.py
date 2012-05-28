@@ -4,10 +4,11 @@
 # polls/urls.py
 from django.conf.urls.defaults import *
 
-# http://localhost:8000/polls/
+#--------- path ---------
+views_path = 'src.mypage.views'
 
 #
-urlpatterns = patterns('.views',
+urlpatterns = patterns( views_path,
     # トップ
     (r'^$', 'index'),
     (r'^home/(?P<username>.+)/$', 'homepage'),

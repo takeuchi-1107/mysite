@@ -26,13 +26,13 @@ urlpatterns += patterns('',
     # top : http://127.0.0.1:8000/top/
     ( r'^top/$', include('src.top.urls') ),
     # polls : http://127.0.0.1:8000/polls/
-    ( r'^polls/', include('src.polls.urls') ),
+#    ( r'^polls/', include('src.polls.urls') ),
     # entries : http://127.0.0.1:8000/entries/
     ( r'^entries/', include('src.entries.urls') ),
     # account : http://127.0.0.1:8000/account/
     ( r'^account/', include('src.account.urls') ),
     # mypage : http://127.0.0.1:8000/mypage/
-#    ( r'^mypage/', include('src.mypage.urls') ),
+    ( r'^mypage/', include('src.mypage.urls') ),
     # twitter : http://127.0.0.1:8000/twitter/
     ( r'^twitter/', include('src.twitter.urls') ),
 )
