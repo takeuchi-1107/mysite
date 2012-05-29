@@ -3,6 +3,7 @@
 #--------- import ---------
 from django.shortcuts import render_to_response
 from django.http import HttpResponseRedirect
+from django.template import RequestContext
 from src.entries.models import Entry, EntryForm
 
 #--------- template ---------
@@ -17,7 +18,10 @@ def page_list( request, object_id ):
     except Entry.DoesNotExist:
         list = []
 
-    return render_to_response( template_path + "entry_list.html", {'request': request, 'object_list': list});
+
+    ctxt = RequestContext( request, {'request': request, 'object_list': list} )
+
+    return render_to_response( template_path + "entry_list.html", ctxt)
 
 
 def create_entry( request ):
@@ -37,7 +41,9 @@ def create_entry( request ):
 
     form = dict(form=form)
 
-    return render_to_response( template_path + 'entry_form.html', form )
+    ctxt = RequestContext( request, form )
+
+    return render_to_response( template_path + 'entry_form.html', ctxt )
 
 
 

@@ -24,13 +24,15 @@ def homepage(request, username):
         pass
     else:
         photoname = obj.image.name
-    return direct_to_template( request, 'mypage/homepage.html', { 'request': request, 'username':username, 'photoname':photoname })
 
+    return direct_to_template( request, 'mypage/homepage.html', { 'request': request, 'username':username, 'photoname':photoname })
 
 #
 def result_entrypage(request):
 
-    return render_to_response('mypage/photo_upload.html', {'message': message,'username':username}, context_instance=RequestContext(request))
+    ctxt = RequestContext( request, {'message': message,'username':username} )
+
+    return render_to_response('mypage/photo_upload.html', ctxt )
 
 def photo_upload(request):
     username = request.user.username
@@ -59,8 +61,13 @@ def photo_upload(request):
     else:
         message = ""
 
-    return render_to_response('mypage/photo_upload.html', {'message': message,'username':username}, context_instance=RequestContext(request))
+    ctxt = RequestContext( request, {'message': message,'username':username} )
+
+    return render_to_response('mypage/photo_upload.html', ctxt )
 
 #
 def result(request, username, resu):
-    return render_to_response('mypage/result.html', { 'username':username,'resu':resu} )
+
+    ctxt = RequestContext( request, { 'username':username,'resu':resu} )
+
+    return render_to_response('mypage/result.html', ctxt )

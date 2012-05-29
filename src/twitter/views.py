@@ -14,10 +14,13 @@ template_path = 'twitter/'
 
 CONSUMER_KEY    = 'N6ETZqtUipxI3COGdHPKg'
 CONSUMER_SECRET = 'vK20lil9dan6YnLNMDXXMGD8UWScphyk58vFi854k'
-CALLBACK_URL = 'http://127.0.0.1:8000/twitter/oauth/get_callback/'
+CALLBACK_URL    = 'http://127.0.0.1:8000/twitter/oauth/get_callback/'
 
 def index(request):
-    return render_to_response( template_path + '/index.html' )
+
+    ctxt = RequestContext( request )
+
+    return render_to_response( template_path + '/index.html', ctxt )
 
 
 def get(request):
@@ -35,10 +38,8 @@ def get(request):
 
 def get_callback(request):
 
-    # Example using callback (web app)
     verifier = request.GET.get('oauth_verifier')
 
-    # Let's say this is a web app, so we need to re-build the auth handler first...
     auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 
     token = request.session.get('request_token')
@@ -61,10 +62,8 @@ def oauth_index(request):
     auth.set_access_token( request.session.get('key'), request.session.get('secret') )
     api = tweepy.API(auth_handler=auth)
 
-    # Get username
     username = auth.get_username()
 
-    # Get timeline
     timeline_list = api.home_timeline()
 
     ctxt = RequestContext( request, { 'username': username, 'timeline_list': timeline_list } )

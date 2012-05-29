@@ -1,8 +1,13 @@
+{% extends "./base.html" %}
 
-<!-- コンテンツ -->
-<h1><b>{{ username }}</b>のページ</h1>
-<img border="0" src="{{ MEDIA_URL }}{{ photoname }}" width="128" height="128" alt="写真">
-<a href="/mypage/photo_upload/">写真をアップロード</a>
-<hr/>
+{% block content %}
 
-<p><a href="/src/top/">戻る</a><p>
+    <!-- コンテンツ -->
+    <h1><b>{{ username }}</b>のページ</h1>
+    <img border="0" src="{{ MEDIA_URL }}{{ photoname }}" width="128" height="128" alt="写真">
+    <a href="/mypage/photo_upload/">写真をアップロード</a>
+    <hr/>
+
+    <p><a href="/top/">戻る</a><p>
+
+{% endblock %}

@@ -1,25 +1,32 @@
+{% extends "./base.html" %}
 
-<div class="validation">
+{% block content %}
 
-    <p><error>
-        {% if form.errors %}
-            正しいユーザ名とパスワードを入力してください (大文字小文字は区別します) 。
-        {% endif %}
-    </error></p>
-    <br />
+    <div class="validation">
 
-    <form action="." method="post">
-        <label for="username">ユーザ名：</label> {{ form.username }} <br/>
-        <label for="password">パスワード：</label> {{ form.password }} <br/>
-        <input type="submit" value="ログイン"/>
+        <p>
+            <error>
+                {% if form.errors %}
+                    正しいユーザ名とパスワードを入力してください (大文字小文字は区別します) 。
+                {% endif %}
+            </error>
+        </p>
+        <br/>
 
-    </form>
+        <form action="." method="post">
+            <label for="username">ユーザ名：</label> {{ form.username }} <br/>
+            <label for="password">パスワード：</label> {{ form.password }} <br/>
+            <input type="submit" value="ログイン"/>
 
-</div>
+        </form>
 
-<br/>
-<br/>
+    </div>
 
-<dd div class="operation">
-    <a href="/entries/page/1/">一覧に戻る</a>
-</dd>
+    <br/>
+    <br/>
+
+    <dd div class="operation">
+        <a href="/entries/page/1/">一覧に戻る</a>
+    </dd>
+
+{% endblock %}

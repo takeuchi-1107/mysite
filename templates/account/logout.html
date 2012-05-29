@@ -1,13 +1,18 @@
+{% extends "./base.html" %}
 
-<p>ログアウトしました</p>
-<br />
+{% block content %}
 
-<div class="operation">
-    <p><a href= "/top/">もう一度ログイン</a></p>
-</div>
+    <p>ログアウトしました</p>
+    <br/>
 
-<br />
-<br />
-<dd div class="operation">
-    <a href="/entries/page/1/">一覧に戻る</a>
-</dd>
+    <div class="operation">
+        <p><a href="/top/">もう一度ログイン</a></p>
+    </div>
+
+    <br/>
+    <br/>
+    <dd div class="operation">
+        <a href="/entries/page/1/">一覧に戻る</a>
+    </dd>
+
+{% endblock %}
